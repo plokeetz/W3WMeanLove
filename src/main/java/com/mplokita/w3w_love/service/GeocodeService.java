@@ -24,7 +24,7 @@ public class GeocodeService {
 
     private static final Logger log = LoggerFactory.getLogger(GeocodeService.class);
 
-    public GeocodeService(WebClient.Builder requesterBuilder, GeocodeConfig config) {
+    public GeocodeService(GeocodeConfig config, WebClient.Builder requesterBuilder) {
         this.config = config;
         this.requester = requesterBuilder.baseUrl(config.getBaseURL()).build();
     }

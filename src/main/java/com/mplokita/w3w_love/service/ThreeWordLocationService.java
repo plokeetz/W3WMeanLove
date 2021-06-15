@@ -45,9 +45,7 @@ public class ThreeWordLocationService {
                 .uri(uri)
                 .retrieve()
                 .bodyToMono(JsonNode.class)
-                .doOnError(err ->  {
-                    log.warn(err.getMessage().replaceAll(config.getAPIKey(), "API_KEY"));
-                })
+                .doOnError(err ->  log.warn(err.getMessage().replaceAll(config.getAPIKey(), "API_KEY")))
                 .onErrorReturn(WebClientResponseException.class, mapper.nullNode())
                 .filter(it -> !it.isNull())
                 .map(it -> it.get("words").toString())
