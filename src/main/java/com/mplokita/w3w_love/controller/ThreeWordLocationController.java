@@ -19,8 +19,6 @@ public class ThreeWordLocationController {
 
     private final ThreeWordLocationService threeWordLocationService;
 
-    private final AtomicInteger counter = new AtomicInteger();
-
     public ThreeWordLocationController(
             GeocodeService geocodeService,
             ThreeWordLocationService threeWordLocationService
